@@ -1,6 +1,7 @@
 # EnriqueBlog
 
 ## Link to deployed site
+https://enriqueblog.herokuapp.com
 
 
 ## Setup and installations
