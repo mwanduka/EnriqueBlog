@@ -1,14 +1,48 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"> {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Wander's Facts </title>
+    {% endif %}
+</head>
 
 <!-- Content block -->
 {% block content %}
-
-    <title> {{ title }} </title>
-
-    <div class="container">
-
-        <h1>Home Page</h1>
-
+<body>
+    <div class="jumbotron">
+        <h2 style="text-align: center">Wander's Facts</h2>
+        <p style="text-align: center">" Periods of time when an individual is thinking of something that is unrelated to the task he/she is performing."</p>
+        <h5 style="text-align: center">Welcome to my wander's facts journey</h5>
+    </div>
+    <div class="container panel panel-default">
+        {% for post in posts %}
+        <div class="panel-heading">
+            <h4>
+                <a href='{{url_for ("main.blog", id = post.id)}}'>{{post.blog_name}}</a>
+            </h4>
+        </div>
+        <div class="panel-body">
+            <p>{{post.blog_info | truncate(500)}}</p>
+        </div>
+         {% endfor %}
     </div>
 
-{% endblock %}
+
+    <!-- Styles block -->
+    {% block styles%}
+    {{ super() }}
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    {% endblock %}
+    {% endblock%}
+
+</body>
+
+</html>

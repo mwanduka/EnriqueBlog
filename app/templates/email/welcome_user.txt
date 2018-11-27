@@ -1,0 +1,6 @@
+Hello there {{subscribers.name}}!
+Such a delight to have you subscribe to EnriqueBlog, do feel welcomed.
+Enjoy the journey and thoughts of Wandre's facts.
+Warm regards,
+
+Wandre's facts Blogging team.
